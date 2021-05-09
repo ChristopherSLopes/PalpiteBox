@@ -2,13 +2,18 @@ import { GoogleSpreadsheet } from 'google-spreadsheet'
 
 const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID)//url da planilha
 
+const fromBase64 = value => {
+    const buff = new Buffer.from(value, 'base64');
+    return buff.toString('ascii');
+}
+
 export default async(req, res) =>{ //Na comunicação http temos require e response por padrão já aceita um async   
     console.log(process.env.VAR1)
     try{
         console.log(process.env.VAR1)
         await doc.useServiceAccountAuth({
             client_email: process.env.SHEET_CLIENT_EMAIL,
-            private_key: process.env.SHEET_PRIVATE_KEY
+            private_key: fromBase64(process.env.SHEET_PRIVATE_KEY)
         })
         await doc.loadInfo() //to pedindo para carregar as informações da planilha
 
