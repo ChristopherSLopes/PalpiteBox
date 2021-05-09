@@ -1,11 +1,8 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet'
+import {fromBase64} from '../../utils/base64'
 
 const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID)//url da planilha
 
-const fromBase64 = value => {
-    const buff = new Buffer.from(value, 'base64');
-    return buff.toString('ascii');
-}
 
 export default async(req, res) =>{ //Na comunicação http temos require e response por padrão já aceita um async   
     console.log(process.env.VAR1)
