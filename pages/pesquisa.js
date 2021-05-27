@@ -33,7 +33,7 @@ const Pesquisa = () => {
         }))
     }
     return(
-        <div className='pt-6'>
+        <div className='pt-6 text-center'>
             <PageTitle title='Pesquisa'/>
             <h1 className='text-center font-bold my-4 text-2xl'>Criticas e sugestões</h1>
             <p className='text-center mb-6'>
@@ -42,11 +42,11 @@ const Pesquisa = () => {
             </p>
             { !sucess && <div className='w-1/5 mx-auto'>
                 <label className='font-bold'>Seu nome:</label>
-                <input type='text' className='p-4 block shadow bg-blue-100 my-2 rounded' placeholder='name' onChange={onChange} name='Nome' value={form.Nome}/>
+                <input type='text' className='py-4 px-8 mx-auto block shadow bg-blue-100 my-2 rounded' placeholder='name' onChange={onChange} name='Nome' value={form.Nome}/>
                 <label className='font-bold'>Whatsapp:</label>
-                <input type='number' className='p-4 block shadow bg-blue-100 my-2 rounded' placeholder='whatsapp' onChange={onChange} name='Whatsapp' value={form.Whatsapp}/>
+                <input type='number' className='p-4 px-8 mx-auto block shadow bg-blue-100 my-2 rounded' placeholder='whatsapp' onChange={onChange} name='Whatsapp' value={form.Whatsapp}/>
                 <label className='font-bold'>E-mail:</label>
-                <input type='email' className='p-4 block shadow bg-blue-100 my-2 rounded' placeholder='email' onChange={onChange} name='Email' value={form.Email}/>
+                <input type='email' className='p-4 px-8 mx-auto block shadow bg-blue-100 my-2 rounded' placeholder='email' onChange={onChange} name='Email' value={form.Email}/>
                 <label className='font-bold'>Nota:</label>
                 <div className='flex py-6'>
                 {notas.map(nota => {
@@ -58,8 +58,7 @@ const Pesquisa = () => {
                     )
                 })}
                 </div>
-
-                <button className='bg-blue-400 px-6 py-4 font-bold rounded-lg shadow-lg hover:shadow ' onClick={save}>Salvar</button>
+                <button className='bg-blue-400 py-4 font-bold rounded-lg shadow-lg hover:shadow px-10 mx-8' onClick={save}>Salvar</button>
 
             </div> /* se não tiver cupom ainda, mostra esse, se não, mostre o cupom*/}
             { sucess && <div className='w-1/5 mx-auto'> 
