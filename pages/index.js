@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import useSWR from 'swr';
 import PageTitle from './components/PageTitle'
+import styles from './styles.module.css';
 
  const fetcher = (...args) => fetch(...args).then(res => res.json())//...args 
 
@@ -13,6 +14,7 @@ const Index = () =>{
     return(
         <div>
             <PageTitle title='Seja Bem Vindo'/>
+            <h1 className={styles.titulo}>Restaurante Restaurante</h1>
             <p className='mt-12 text-center'>
                 O restaurante x estara sempre em busca por atender melhor seus clientes.<br/>
                 Por isso, estamos sempre abertos a ouvir a sua opinião.

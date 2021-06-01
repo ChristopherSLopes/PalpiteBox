@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import PageTitle from './components/PageTitle'
+import styles from './styles.module.css';
 
 const Pesquisa = () => {
     const [ form, setForm ] = useState({ //Apenas colocaos o formulario em um useState
@@ -33,9 +34,9 @@ const Pesquisa = () => {
         }))
     }
     return(
-        <div className='pt-6 text-center'>
+        <div className='text-center'>
             <PageTitle title='Pesquisa'/>
-            <h1 className='text-center font-bold my-4 text-2xl'>Criticas e sugestões</h1>
+            <h1 className={styles.titulo}>Criticas e sugestões</h1>
             <p className='text-center mb-6'>
                 O restaurante x estara sempre em busca por atender melhor seus clientes.<br/>
                 Por isso, estamos sempre abertos a ouvir a sua opinião.

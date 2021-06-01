@@ -1,0 +1,3 @@
+.titulo {
+  @apply pt-6 text-center font-bold my-4 text-2xl;
+}
